@@ -8,6 +8,8 @@ def main():
     losing_squares()
     rectangle_entries()
 
+#commit change test
+
 
 def rectangle_entries():
 
