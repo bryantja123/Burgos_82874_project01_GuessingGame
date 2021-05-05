@@ -6,8 +6,7 @@ def main():
 
     window_size = 400
     squares = 4
-    # px = [0 , 400]
-    # py = [0 , 400]
+    
     win = GraphWin("Burgos_82874, GAME!", window_size, window_size)
 
     for i in range(squares - 1):
