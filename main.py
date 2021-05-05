@@ -3,81 +3,36 @@ from graphics import *
 
 def main():
     global win
-    win = GraphWin("Burgos_82874, GAME!", 600, 600)
-    prepare_game()
-    losing_squares()
-    rectangle_entries()
 
+    window_size = 400
+    squares = 4
+    # px = [0 , 400]
+    # py = [0 , 400]
+    win = GraphWin("Burgos_82874, GAME!", window_size, window_size)
 
+    for i in range(squares - 1):
+        h_line = Line(Point(0, (window_size / squares) * (i + 1)), Point(window_size, (window_size / squares) * (i + 1)))
+        h_line.draw(win)
+        v_line = Line(Point((window_size / squares) * (i + 1), 0), Point((window_size / squares) * (i + 1), window_size))
+        v_line.draw(win)
 
-def rectangle_entries():
+    # win.getMouse()
 
-    for i in range(10):
-        p = win.getMouse()
-        x1 = p.getX() - 10
-        y1 = p.getY() - 10
-        x2 = p.getX() + 10
-        y2 = p.getY() + 10
-        r = Rectangle(Point(x1, y1), Point(x2, y2))
-        r.setFill("red")
-        r.setOutline("red")
-        r.setWidth(0)
-        r.draw(win)
+    for i in range(5):
+        player = win.getMouse()
+        px = player.getX()
+        py = player.getY()
 
-def losing_squares():
-
-
-    for i in range(10):
-        r = Rectangle(Point(20, 20), Point(40, 40))
-        r.setFill("red")
-        r.setOutline("red")
-        r.setWidth(0)
-        r.draw(win)
-
-
-def prepare_game():
-
-    v1 = Line(Point(100, 100), Point(500, 100))
-    v2 = Line(Point(100, 200), Point(500, 200))
-    v3 = Line(Point(100, 300), Point(500, 300))
-    v4 = Line(Point(100, 400), Point(500, 400))
-    v5 = Line(Point(100, 500), Point(500, 500))
-
-
-    h1 = Line(Point(100, 500), Point(100, 100))
-    h2 = Line(Point(200, 500), Point(200, 100))
-    h3 = Line(Point(300, 500), Point(300, 100))
-    h4 = Line(Point(400, 500), Point(400, 100))
-    h5 = Line(Point(500, 500), Point(500, 100))
-
-
-    v1.setOutline("black")
-    v2.setOutline("black")
-    v3.setOutline("black")
-    v4.setOutline("black")
-    v5.setOutline("black")
-
-
-    h1.setOutline("black")
-    h2.setOutline("black")
-    h3.setOutline("black")
-    h4.setOutline("black")
-    h5.setOutline("black")
-
-
-    v1.draw(win)
-    v2.draw(win)
-    v3.draw(win)
-    v4.draw(win)
-    v5.draw(win)
-
-
-    h1.draw(win)
-    h2.draw(win)
-    h3.draw(win)
-    h4.draw(win)
-    h5.draw(win)
-
+        if (px > 0 and px <= 100 and py > 0 and py <= 100):
+            r = Rectangle(Point(0, 100), Point(100, 0))
+            r.setFill('green')
+            r.setOutline('black')
+            r.draw(win)
+        elif ():
+            r = Rectangle(Point(0, 100), Point(100, 0))
+            r.setFill('green')
+            r.setOutline('black')
+            r.draw(win)
 
 
 main()
