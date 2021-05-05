@@ -1,6 +1,5 @@
 from graphics import *
 
-# push from pycharm test 2
 
 def main():
     global win
