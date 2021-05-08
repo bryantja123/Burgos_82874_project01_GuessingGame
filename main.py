@@ -10,6 +10,7 @@ def main():
     window_size = 400
     game_loss = False
     canvas = []
+    game_win = False
 
 
     win = GraphWin("Burgos_82874, GAME!", window_size, window_size)
@@ -63,6 +64,8 @@ def main():
         player = win.getMouse()
         px = player.getX()
         py = player.getY()
+
+
 
         if (px > 0 and px <= 100 and py > 0 and py <= 100):
                 pos = 0
@@ -336,6 +339,11 @@ def main():
                     r1.draw(win)
                     canvas.append(r1)
 
+
+        if(i == 4):
+
+            game_win = True
+
         if game_loss:
 
             v1.undraw()
@@ -348,12 +356,33 @@ def main():
             h4.undraw()
             for r in canvas:
                 r.undraw()
+            message = Text(Point(200, 200), 'G A M E   O V E R')
+            message.setSize(32)
+            message.setFace('times roman')
+            message.draw(win)
+
+        if game_win:
+
+            v1.undraw()
+            v2.undraw()
+            v3.undraw()
+            v4.undraw()
+            h1.undraw()
+            h2.undraw()
+            h3.undraw()
+            h4.undraw()
+            for r in canvas:
+                r.undraw()
+            message = Text(Point(200, 200), 'G O O D   G A M E')
+            message.setSize(32)
+            message.setFace('times roman')
+            message.draw(win)
 
 
 
 
     win.getMouse()
 
-    # win.close()
+
 
 main()
